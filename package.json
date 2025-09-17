@@ -8,9 +8,11 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "vitest",
+    "test": "npm run test:typecheck && vitest",
     "test:ui": "vitest --ui",
-    "test:run": "vitest run"
+    "test:run": "npm run test:typecheck && vitest run",
+    "test:typecheck": "tsc --noEmit --project tsconfig.test.json",
+    "test:only": "vitest run"
   },
   "dependencies": {
     "@types/styled-components": "^5.1.34",
