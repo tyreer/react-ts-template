@@ -10,6 +10,6 @@ const StyledCard = styled.div`
   border: 5px dashed blue;
 `;
 
-export const Card: React.FC<CardProps> = ({ children }) => {
+export default function Card({ children }: CardProps) {
   return <StyledCard>{children}</StyledCard>;
-};
+}
