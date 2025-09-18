@@ -15,11 +15,13 @@ A modern React development environment with TypeScript, Vite, Styled Components,
 ## 📦 What's Included
 
 ### Dependencies
+
 - `react` & `react-dom` - React framework
 - `styled-components` - CSS-in-JS styling
 - `@types/styled-components` - TypeScript definitions
 
 ### Dev Dependencies
+
 - `@vitejs/plugin-react` - Vite React plugin
 - `typescript` - TypeScript compiler
 - `vitest` - Testing framework
@@ -32,16 +34,19 @@ A modern React development environment with TypeScript, Vite, Styled Components,
 ## 🛠️ Getting Started
 
 1. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 2. **Start development server:**
+
    ```bash
    npm run dev
    ```
 
 3. **Run tests:**
+
    ```bash
    npm test
    ```
@@ -82,13 +87,14 @@ This template uses Styled Components with a centralized theme system:
 ### Example Usage
 
 ```tsx
-import styled from 'styled-components'
-import { Button } from './components'
+import styled from 'styled-components';
+
+import { Button } from './components';
 
 const Container = styled.div`
   padding: ${({ theme }) => theme.spacing.lg};
   background-color: ${({ theme }) => theme.colors.surface};
-`
+`;
 
 function App() {
   return (
@@ -97,7 +103,7 @@ function App() {
         Click me
       </Button>
     </Container>
-  )
+  );
 }
 ```
 
@@ -126,19 +132,20 @@ npm run test:ui
 ### Example Test
 
 ```tsx
-import { render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
-import { Button } from './Button'
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
+import { Button } from './Button';
 
 test('button handles click events', async () => {
-  const handleClick = vi.fn()
-  const user = userEvent.setup()
-  
-  render(<Button onClick={handleClick}>Click me</Button>)
-  
-  await user.click(screen.getByRole('button'))
-  expect(handleClick).toHaveBeenCalledTimes(1)
-})
+  const handleClick = vi.fn();
+  const user = userEvent.setup();
+
+  render(<Button onClick={handleClick}>Click me</Button>);
+
+  await user.click(screen.getByRole('button'));
+  expect(handleClick).toHaveBeenCalledTimes(1);
+});
 ```
 
 ## 📝 Available Scripts

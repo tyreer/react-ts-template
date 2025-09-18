@@ -1,15 +1,15 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-import type { ReactNode } from 'react'
+import type { ReactNode } from 'react';
 
 interface CardProps {
-    children: ReactNode
+  children: ReactNode;
 }
 
 const StyledCard = styled.div`
   border: 5px dashed blue;
-`
+`;
 
 export const Card: React.FC<CardProps> = ({ children }) => {
-    return <StyledCard>{children}</StyledCard>
-}
+  return <StyledCard>{children}</StyledCard>;
+};

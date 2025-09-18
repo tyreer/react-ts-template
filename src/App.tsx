@@ -1,4 +1,4 @@
-import { Card } from './components/Card'
+import { Card } from './components/Card';
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
         <h1>Hello World</h1>
       </Card>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
