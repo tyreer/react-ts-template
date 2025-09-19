@@ -8,36 +8,6 @@
 
 React template with TypeScript, Vite, Styled Components, and testing setup.
 
-## 🚀 Features
-
-- **React 19** - Latest React with modern features
-- **Vite** - Lightning-fast build tool and dev server
-- **TypeScript** - Full type safety and IntelliSense
-- **Styled Components** - CSS-in-JS with TypeScript support
-- **Vitest** - Fast unit testing framework
-- **React Testing Library** - Simple and complete testing utilities
-- **ESLint** - Code linting and formatting
-- **Prettier** - Code formatting with import sorting
-
-## 📦 What's Included
-
-### Dependencies
-
-- `react` & `react-dom` - React framework
-- `styled-components` - CSS-in-JS styling
-- `@types/styled-components` - TypeScript definitions
-
-### Dev Dependencies
-
-- `@vitejs/plugin-react` - Vite React plugin
-- `typescript` - TypeScript compiler
-- `vitest` - Testing framework
-- `@testing-library/react` - React testing utilities
-- `@testing-library/jest-dom` - Custom Jest matchers
-- `@testing-library/user-event` - User interaction testing
-- `jsdom` - DOM environment for testing
-- `eslint` - Code linting
-
 ## 🛠️ Getting Started
 
 ### Prerequisites
@@ -50,7 +20,7 @@ React template with TypeScript, Vite, Styled Components, and testing setup.
 1. **Clone the repository:**
 
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/tyreer/react-ts-template.git
    cd dev-template
    ```
 
@@ -76,6 +46,34 @@ React template with TypeScript, Vite, Styled Components, and testing setup.
    ```bash
    npm run build
    ```
+
+## 📦 Cool Really Awesome
+
+- **React 19** - Latest React with modern features
+- **Vite** - Lightning-fast build tool and dev server
+- **TypeScript** - Full type safety and IntelliSense
+- **Styled Components** - CSS-in-JS with TypeScript support
+- **Vitest** - Fast unit testing framework
+- **React Testing Library** - Simple and complete testing utilities
+- **ESLint** - Code linting and formatting
+- **Prettier** - Code formatting with import sorting
+
+### Dependencies
+
+- `react` & `react-dom` - React framework
+- `styled-components` - CSS-in-JS styling
+- `@types/styled-components` - TypeScript definitions
+
+### Dev Dependencies
+
+- `@vitejs/plugin-react` - Vite React plugin
+- `typescript` - TypeScript compiler
+- `vitest` - Testing framework
+- `@testing-library/react` - React testing utilities
+- `@testing-library/jest-dom` - Custom Jest matchers
+- `@testing-library/user-event` - User interaction testing
+- `jsdom` - DOM environment for testing
+- `eslint` - Code linting
 
 ## 📁 Project Structure
 
