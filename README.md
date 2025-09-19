@@ -1,6 +1,12 @@
-# Dev Template
+# React TypeScript Template
 
-A modern React development environment with TypeScript, Vite, Styled Components, and comprehensive testing setup.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org/)
+[![React](https://img.shields.io/badge/React-19.1.1-blue)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-blue)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-7.1.2-646CFF)](https://vitejs.dev/)
+
+React template with TypeScript, Vite, Styled Components, and testing setup.
 
 ## 🚀 Features
 
@@ -11,6 +17,7 @@ A modern React development environment with TypeScript, Vite, Styled Components,
 - **Vitest** - Fast unit testing framework
 - **React Testing Library** - Simple and complete testing utilities
 - **ESLint** - Code linting and formatting
+- **Prettier** - Code formatting with import sorting
 
 ## 📦 What's Included
 
@@ -33,25 +40,39 @@ A modern React development environment with TypeScript, Vite, Styled Components,
 
 ## 🛠️ Getting Started
 
-1. **Install dependencies:**
+### Prerequisites
+
+- Node.js (version 18 or higher)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone <your-repo-url>
+   cd dev-template
+   ```
+
+2. **Install dependencies:**
 
    ```bash
    npm install
    ```
 
-2. **Start development server:**
+3. **Start development server:**
 
    ```bash
    npm run dev
    ```
 
-3. **Run tests:**
+4. **Run tests:**
 
    ```bash
    npm test
    ```
 
-4. **Build for production:**
+5. **Build for production:**
    ```bash
    npm run build
    ```
@@ -61,47 +82,50 @@ A modern React development environment with TypeScript, Vite, Styled Components,
 ```
 src/
 ├── components/          # Reusable UI components
-│   ├── Button.tsx      # Example button component
-│   ├── Button.test.tsx # Button component tests
 │   ├── Card.tsx        # Example card component
 │   ├── Card.test.tsx   # Card component tests
 │   └── index.ts        # Component exports
-├── theme/              # Styled Components theme
-│   └── index.ts        # Theme configuration
 ├── test/               # Test configuration
 │   └── setup.ts        # Test setup file
+├── assets/             # Static assets
 ├── App.tsx             # Main application component
 ├── main.tsx            # Application entry point
-└── styled.d.ts         # Styled Components type definitions
+├── index.css           # Global styles
+└── vite-env.d.ts       # Vite type definitions
 ```
 
 ## 🎨 Styling
 
-This template uses Styled Components with a centralized theme system:
+This template uses Styled Components for CSS-in-JS styling:
 
-- **Theme Provider** - Wraps the entire app with theme context
-- **TypeScript Support** - Full type safety for theme properties
-- **Responsive Design** - Mobile-first approach with consistent spacing
-- **Component Variants** - Easy-to-use prop-based styling
+- **Styled Components** - CSS-in-JS with TypeScript support
+- **TypeScript Support** - Full type safety for styled components
+- **Component-based Styling** - Encapsulated styles per component
+- **Global Styles** - CSS file for global styles and resets
 
 ### Example Usage
 
 ```tsx
 import styled from 'styled-components';
 
-import { Button } from './components';
-
 const Container = styled.div`
-  padding: ${({ theme }) => theme.spacing.lg};
-  background-color: ${({ theme }) => theme.colors.surface};
+  padding: 1rem;
+  background-color: #f5f5f5;
+`;
+
+const Button = styled.button`
+  background-color: #007bff;
+  color: white;
+
+  &:hover {
+    background-color: #0056b3;
+  }
 `;
 
 function App() {
   return (
     <Container>
-      <Button variant="primary" size="lg">
-        Click me
-      </Button>
+      <Button>Click me</Button>
     </Container>
   );
 }
@@ -153,10 +177,13 @@ test('button handles click events', async () => {
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
-- `npm test` - Run tests in watch mode
-- `npm run test:run` - Run tests once
+- `npm test` - Run tests with type checking
+- `npm run test:run` - Run tests once with type checking
 - `npm run test:ui` - Run tests with UI
+- `npm run test:only` - Run tests without type checking
 - `npm run lint` - Run ESLint
+- `npm run format` - Format code with Prettier
+- `npm run format:check` - Check code formatting
 
 ## 🔧 Configuration Files
 
@@ -164,14 +191,3 @@ test('button handles click events', async () => {
 - `tsconfig.json` - TypeScript configuration
 - `vitest.config.ts` - Vitest testing configuration
 - `.gitignore` - Comprehensive git ignore rules
-
-## 🚀 Ready to Go!
-
-Your development environment is now ready. Start building your React application with:
-
-- Type-safe components
-- Modern styling with Styled Components
-- Comprehensive testing setup
-- Fast development and build processes
-
-Happy coding! 🎉
