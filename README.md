@@ -182,6 +182,16 @@ test('button handles click events', async () => {
 - `npm run lint` - Run ESLint
 - `npm run format` - Format code with Prettier
 - `npm run format:check` - Check code formatting
+- `npm run bootstrap <name>` - Create new component with tests
+
+## 🚀 Component Bootstrap
+
+Quickly generate new components with `npm run bootstrap <name>`. The script auto-converts input to PascalCase and creates component, test, and export files:
+
+```bash
+npm run bootstrap button    # Creates Button component
+npm run bootstrap user-profile # Creates UserProfile component
+```
 
 ## 🔧 Configuration Files
 

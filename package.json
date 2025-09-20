@@ -14,7 +14,8 @@
     "test:typecheck": "tsc --noEmit",
     "test:only": "vitest run",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "bootstrap": "node scripts/bootstrap-component.js"
   },
   "dependencies": {
     "@types/styled-components": "^5.1.34",
