@@ -193,6 +193,15 @@ npm run bootstrap button    # Creates Button component
 npm run bootstrap user-profile # Creates UserProfile component
 ```
 
+## 🛡️ Error Boundary
+
+Built-in error handling with automatic error boundaries:
+
+- **Automatic wrapping** - All components (Card and bootstrapped) are automatically wrapped with error boundaries to contain error propagation
+- **Custom fallback** - Override defaults with custom fallback components and onError handlers for component-specific recovery guidance, error logging, etc.
+
+Based on [Use react-error-boundary to handle errors in React](https://kentcdodds.com/blog/use-react-error-boundary-to-handle-errors-in-react) by Kent C. Dodds.
+
 ## 🔧 Configuration Files
 
 - `vite.config.ts` - Vite configuration with Vitest setup

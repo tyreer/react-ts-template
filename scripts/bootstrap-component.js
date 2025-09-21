@@ -56,6 +56,8 @@ const componentTemplate = `import styled from 'styled-components';
 
 import type { ReactNode } from 'react';
 
+import ErrorBoundary from './ErrorBoundary';
+
 interface ${componentName}Props {
   children: ReactNode;
 }
@@ -65,7 +67,11 @@ const Styled${componentName} = styled.div\`
 \`;
 
 export default function ${componentName}({ children }: ${componentName}Props) {
-  return <Styled${componentName}>{children}</Styled${componentName}>;
+  return (
+    <ErrorBoundary>
+      <Styled${componentName}>{children}</Styled${componentName}>
+    </ErrorBoundary>
+  );
 }
 `;
 

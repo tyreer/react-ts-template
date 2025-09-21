@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 import type { ReactNode } from 'react';
 
+import ErrorBoundary from './ErrorBoundary';
+
 interface CardProps {
   children: ReactNode;
 }
@@ -11,5 +13,9 @@ const StyledCard = styled.div`
 `;
 
 export default function Card({ children }: CardProps) {
-  return <StyledCard>{children}</StyledCard>;
+  return (
+    <ErrorBoundary>
+      <StyledCard>{children}</StyledCard>
+    </ErrorBoundary>
+  );
 }
