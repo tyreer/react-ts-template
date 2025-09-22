@@ -9,6 +9,9 @@ interface CardProps {
 }
 
 const StyledCard = styled.div`
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
   border: 5px dashed blue;
 `;
 
