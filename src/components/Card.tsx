@@ -5,7 +5,7 @@ import type { ReactNode } from 'react';
 import ErrorBoundary from './ErrorBoundary';
 
 interface CardProps {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 const StyledCard = styled.div`
@@ -15,7 +15,10 @@ const StyledCard = styled.div`
 export default function Card({ children }: CardProps) {
   return (
     <ErrorBoundary>
-      <StyledCard>{children}</StyledCard>
+      <StyledCard>
+        <button>Hello World</button>
+        {children}
+      </StyledCard>
     </ErrorBoundary>
   );
 }

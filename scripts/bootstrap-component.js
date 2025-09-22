@@ -59,7 +59,7 @@ import type { ReactNode } from 'react';
 import ErrorBoundary from './ErrorBoundary';
 
 interface ${componentName}Props {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 const Styled${componentName} = styled.div\`
@@ -69,7 +69,10 @@ const Styled${componentName} = styled.div\`
 export default function ${componentName}({ children }: ${componentName}Props) {
   return (
     <ErrorBoundary>
-      <Styled${componentName}>{children}</Styled${componentName}>
+      <Styled${componentName}>
+        <button>Hello World</button>
+        {children}
+      </Styled${componentName}>
     </ErrorBoundary>
   );
 }
@@ -77,17 +80,20 @@ export default function ${componentName}({ children }: ${componentName}Props) {
 
 // Test template
 const testTemplate = `import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import ${componentName} from './${componentName}';
 
 describe('${componentName}', () => {
-  it('renders Hello World text', () => {
-    render(
-      <${componentName}>
-        <h1>Hello World</h1>
-      </${componentName}>
-    );
-    expect(screen.getByText('Hello World')).toBeInTheDocument();
+  it('renders Hello World button and can be clicked', async () => {
+    const user = userEvent.setup();
+
+    render(<${componentName} />);
+
+    const button = screen.getByRole('button', { name: 'Hello World' });
+    await user.click(button);
+
+    expect(button).toBeInTheDocument();
   });
 });
 `;

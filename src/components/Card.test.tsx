@@ -1,14 +1,17 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import Card from './Card';
 
 describe('Card', () => {
-  it('renders Hello World text', () => {
-    render(
-      <Card>
-        <h1>Hello World</h1>
-      </Card>
-    );
-    expect(screen.getByText('Hello World')).toBeInTheDocument();
+  it('renders Hello World button and can be clicked', async () => {
+    const user = userEvent.setup();
+
+    render(<Card />);
+
+    const button = screen.getByRole('button', { name: 'Hello World' });
+    await user.click(button);
+
+    expect(button).toBeInTheDocument();
   });
 });
